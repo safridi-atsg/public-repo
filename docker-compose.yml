@@ -1,0 +1,17 @@
+services:
+
+  one-portal-redis-2:  # Redis service definition
+    image: redis:7.2.4
+    container_name: one_portal_redis_2
+    ports:
+      - "6380:6380"
+    networks:
+      - instance_network
+
+volumes:
+  saml_metadata:
+  icons:
+  postgres_data:
+networks:
+  instance_network:
+    driver: bridge
