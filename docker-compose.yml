@@ -4,9 +4,9 @@ services:
     image: redis:7.2.4
     container_name: one_portal_redis_2
     ports:
-      - "6380:6380"
+      - "6380:6340"
     networks:
-      - instance_network
+      - instance_network-a
 
 volumes:
   saml_metadata:
@@ -14,4 +14,6 @@ volumes:
   postgres_data:
 networks:
   instance_network:
+    driver: bridge
+  instance_network-a:
     driver: bridge
